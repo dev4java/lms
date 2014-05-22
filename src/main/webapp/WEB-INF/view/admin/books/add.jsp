@@ -63,67 +63,85 @@
 		};  
 	</script>
 <body>
-	<div class="wrap">
-		<!--header begin-->
-			<%@include file="/WEB-INF/view/admin/util/banner.jsp" %>
-		<!--header end-->
-		<!--content begin-->
-		<div class="content-wrap1">
-		<!--登录  begin-->
-		<div class="log-wrap">
-			<form method="post" action="">
-				<ul class="tab_switch clearfix">
-					<li class="current png-bg">工号登录</li>
-					<li class="last png-bg">邮箱登录</li>
-				</ul>
-				<!--工号登录 begin-->
-				<div class="login-submit png-bg">
-					<div class="input-row">
-						<p><input class="lginput-txt" id="login-snumber"type="text"><label>工号</label></p>
-						<div class="login-msg msg-mail">
-							<span class="msg-bg png-bg"></span>
-							<div class="msg msg-tip"><i class="msg-icon msg-error"></i><span class="msg-con">工号输入有误</span></div>
+<div class="wrap">
+	<!--header begin-->
+	<div id="header"><div class="logo"><a href="javascript:void(0);" class="png-bg"></a></div></div>
+	<!--header end-->
+	<!---topBar begin-->
+	<%@include file="/WEB-INF/view/admin/util/menu.jsp"%>
+	<!---topBar end->
+	<!--content begin-->
+	<div class="content-wrap">
+		<div id="content" class="clearfix">
+			<!--column_l begin-->
+			<%@include file="/WEB-INF/view/admin/books/book_menu.jsp"%>
+			<!--column_l end-->
+			<!--column_r begin-->
+			<div class="column_r column_r1">
+				<!--图书修改 begin-->
+				<div class="newbook clearfix">
+					<h2>新书入库</h2>
+					<!--newbook form begin-->
+					<form action="" method="">
+						<div class="newbook-detail">
+							<h3>图书基本信息</h3>
+							<div class="newbook-item">
+								<p class="clearfix">
+									<span>图书编号：</span>
+									<span><input class="input-txt input-txt1" type="text"/></span>
+								</p>
+								<p class="clearfix">
+									<span>图书名称：</span>
+									<span><input class="input-txt input-txt1"type="text"/></span>
+								</p>
+								
+								<p class="clearfix">
+									<span>&nbsp;&nbsp;&nbsp;&nbsp;定价：</span>
+									<span><input class="input-txt input-txt1" type="text"/></span>
+								</p>
+								<p class="clearfix">
+									<span>&nbsp;&nbsp;&nbsp;&nbsp;备注：</span>
+									<span><textarea></textarea></span>
+								</p>
+								
+							</div>
+							<div class="newbook-item">
+								<p class="clearfix">
+									<span>&nbsp;&nbsp;分类号：</span>
+									<span><input class="input-txt input-txt1"type="text"/></span>
+								</p>
+								<p class="clearfix">
+									<span>&nbsp;&nbsp;&nbsp;&nbsp;作者：</span><span>
+									<input class="input-txt input-txt1"type="text"/></span>
+								</p>
+								<p class="clearfix">
+									<span>&nbsp;&nbsp;出版社：</span>
+									<span><input class="input-txt input-txt1"type="text"/></span>
+								</p>
+								<p class="clearfix">
+									<span>&nbsp;&nbsp;复本量：</span>
+									<span><input class="input-txt input-txt1"type="text"/></span>
+								</p>
+								
+							</div>
 						</div>
-					</div>
-					<div class="input-row">
-						<p class="last"><input class="lginput-txt last"type="password" id="login-pswd"><label>密码</label></p>
-						<div class="login-msg msg-pswd">
-							<span class="msg-bg png-bg"></span>
-							<div class="msg msg-tip"><i class="msg-icon msg-error"></i><span class="msg-con">密码输入有误</span></div>
-						</div>
-					</div>
-					<p class="word-tip"><a class="c-click" href="忘记密码.html" target="_blank">忘记密码</a></p>
-					<p class="log-btn"><a href="javascript:;" class="login-btn login-btn1">登录</a></p>
+						 <p class="save1"><input type="submit" value="保存设置" class="btn btn1"></p>
+					</form>
+					<!--newbook form  end-->
 				</div>
-				<!--工号登录 end-->
-				<!---邮箱登录 begin-->
-				<div class="login-submit png-bg undis">
-					<div class="input-row">
-						<p><input class="lginput-txt" id="login-mail" type="text"><label>邮箱</label></p>
-						<div class="login-msg msg-number">
-							<span class="msg-bg png-bg"></span>
-							<div class="msg msg-tip"><i class="msg-icon msg-error"></i><span class="msg-con">邮箱输入有误</span></div>
-						</div>
-					</div>
-					<div class="input-row">
-						<p><input class="lginput-txt last"type="password" id="login-pswd"><label>密码</label></p>
-						<div class="login-msg msg-pswd">
-							<span class="msg-bg png-bg"></span>
-							<div class="msg msg-tip"><i class="msg-icon msg-error"></i><span class="msg-con">密码输入有误</span></div>
-						</div>
-					</div>
-					<p class="log-btn"><a href="javascript:;" class="login-btn login-btn1" id="loginBtn">登录</a></p>
-				</div>
-				<!--邮箱登录  end-->			
-			</form>
-	
+				<!--图书修改 end-->
+			</div>
+			<!--column_r end-->
 		</div>
-		<!--登录   end-->		
 	</div>
-		<!--content end-->
-		<!--footer begin-->
-		<%@include file="/WEB-INF/view/util/foot.jsp" %>
-		<!--footer end-->
-	</div>
+	<!--content end-->
+	<!--footer begin-->
+<%@include file="/WEB-INF/view/admin/util/foot.jsp" %>
+	<!--footer end-->
+	<!--topBar tips begin-->
+	<%@include file="/WEB-INF/view/admin/util/topbar.jsp" %>
+	<!--topBar tips end-->
+</div>	
 </body>
 </html>
+

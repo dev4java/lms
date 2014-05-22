@@ -65,7 +65,7 @@
 			</dbStrategy>
 			
 			<map name="get_adminusr_by_email"
-				sqlitem="select id from sc_sys_user where login_email= ? "  sqlType="hsql"
+				sqlitem="select id from lms_sys_user where login_email= ? "  sqlType="hsql"
 				keyProperty="id" valueProperty="id" />
 				
 		</object>

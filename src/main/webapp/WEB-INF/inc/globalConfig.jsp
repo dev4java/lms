@@ -4,6 +4,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <%-- <c:set var="path" value="http://www.jkyftxx.com/stuinfo_collection"/> --%>
-<c:set var="home" value="http://www.jkyftxx.com"></c:set>
 
 
