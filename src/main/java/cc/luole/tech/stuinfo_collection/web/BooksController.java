@@ -25,6 +25,8 @@ public class BooksController extends BaseController{
 	/** serialVersionUID*/
 	private static final long serialVersionUID = 1L;
 	
+	//TODO login 代码冗余 考虑配置过滤器
+	
 	@RequestMapping("/list")
 	public ModelAndView list(HttpServletRequest request,HttpServletResponse response,HttpSession session){
 		if(!isLogin()){
@@ -32,7 +34,7 @@ public class BooksController extends BaseController{
 			return this.getLogin();
 		}
 		ModelAndView model = new ModelAndView();
-		model.setViewName("/admin/list");
+		model.setViewName("/admin/books/list");
 		return model;
 	}
 	
@@ -44,9 +46,31 @@ public class BooksController extends BaseController{
 			return this.getLogin();
 		}
 		ModelAndView model = new ModelAndView();
-		model.setViewName("/admin/add");
+		model.setViewName("/admin/books/add");
 		return model;
 	}
+	
+	@RequestMapping("/add")
+	public ModelAndView addPost(HttpServletRequest request,HttpServletResponse response,HttpSession session){
+		if(!isLogin()){
+			
+			return this.getLogin();
+		}
+		ModelAndView model = new ModelAndView();
+		String name= request.getParameter("name");
+		String price= request.getParameter("price");
+		String detil= request.getParameter("detil");
+		String typeNo= request.getParameter("typeNo");
+		String author= request.getParameter("author");
+		String press= request.getParameter("press");
+		String duplicate= request.getParameter("duplicate");
+		
+		
+		
+		return model;
+	}
+	
+	
 	
 	@RequestMapping("/mod")
 	public ModelAndView mod(HttpServletRequest request,HttpServletResponse response,HttpSession session){
@@ -55,7 +79,7 @@ public class BooksController extends BaseController{
 			return this.getLogin();
 		}
 		ModelAndView model = new ModelAndView();
-		model.setViewName("/admin/index");
+		model.setViewName("/admin/books/index");
 		return model;
 	}
 	@RequestMapping("/detail")
@@ -65,7 +89,7 @@ public class BooksController extends BaseController{
 			return this.getLogin();
 		}
 		ModelAndView model = new ModelAndView();
-		model.setViewName("/admin/detail");
+		model.setViewName("/admin/books/detail");
 		return model;
 	}
 	@RequestMapping("/del")
@@ -75,7 +99,7 @@ public class BooksController extends BaseController{
 			return this.getLogin();
 		}
 		ModelAndView model = new ModelAndView();
-		model.setViewName("/admin/del");
+		model.setViewName("/admin/books/del");
 		return model;
 	}
 
