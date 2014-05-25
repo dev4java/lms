@@ -10,7 +10,7 @@
 
     <!-- Uncomment and your base-package here:-->
          <context:component-scan
-            base-package="cc.luole.tech.stuinfo_collection.*"/>  
+            base-package="com.yswsoft.lms.*"/>  
 
 
     <mvc:annotation-driven />

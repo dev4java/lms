@@ -3,9 +3,10 @@
 <!DOCTYPE html>    
 <html>
 <%@include file="/WEB-INF/view/util/header.jsp" %>
+<link href="${path }/css/common.css" type="text/css" rel="stylesheet">
+<link href="${path }/css/login.css"  type="text/css" rel="stylesheet" />
+<script src="${path }/js/login.js" type="text/javascript" ></script>
 <script src="${path }/js/pngfix.js" type="text/javascript"></script>
-<link href="${path }/css/common.css" rel="stylesheet">
-<script src="${path }/js/login.js" type="text/javascript"></script>
 <script src="${path }/js/jquery.md5.js" type="text/javascript"></script>
 	<script>
 
@@ -14,14 +15,15 @@
 					var username=$("#login-mail").val();
 					var ud=$("#login-pswd").val();
 					var pwd = $.md5(ud);
-					if(username==null ||username=="" || ud==""|| ud==null){
+					 alert(username+"------ud="+ud+"-----"+pwd);
+					/* if(username==null ||username=="" || pwd==""|| pwd==null){
 						 alert( "邮箱或密码为空");
 						//nullid nullid
 						// $("#nullid").css("display","block");
 						return false;
 					}else{
 						//$("#nullid").css("display","none");
-					}
+					} */
 					$.ajax({  
 			            type: "POST", 
 			            url: "/lms/base/login", 
@@ -30,7 +32,7 @@
 			            dataType: 'json', 
 			            success: function(data,statusText){
 			              if(data.status==0){
-			            	  window.location.href="/lms/admin/show";
+			            	  window.location.href="/lms/admin/index";
 			              }else{
 			            	 //$("#errid").css("display","block");
 			              }
@@ -85,7 +87,7 @@
 						</div>
 					</div>
 					<div class="input-row">
-						<p class="last"><input class="lginput-txt last"type="password" id="login-pswd"><label>密码</label></p>
+						<p class="last"><input class="lginput-txt last"type="password" id="login-pswd1"><label>密码</label></p>
 						<div class="login-msg msg-pswd">
 							<span class="msg-bg png-bg"></span>
 							<div class="msg msg-tip"><i class="msg-icon msg-error"></i><span class="msg-con">密码输入有误</span></div>

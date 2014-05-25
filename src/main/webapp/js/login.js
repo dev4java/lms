@@ -1,4 +1,4 @@
-document.write("<script language='javascript' src='theme/js/common.js'></script>");
+document.write("<script language='javascript' src='${path}/js/common.js'></script>");
 var id;
 $(function(){
 	var editName;
