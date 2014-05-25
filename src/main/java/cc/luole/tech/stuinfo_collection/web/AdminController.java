@@ -36,7 +36,7 @@ import cc.luole.tech.stuinfo_collection.util.Util;
 * @version 1.0
 */
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/lms/admin")
 public class AdminController extends BaseController{
 	
 	@Autowired
@@ -47,6 +47,20 @@ public class AdminController extends BaseController{
 	
 	/** serialVersionUID*/
 	private static final long serialVersionUID = 1L;
+	
+	
+	@RequestMapping("/index")
+	public ModelAndView index(HttpServletRequest request,HttpServletResponse response,HttpSession session){
+		if(!isLogin()){
+			//return this.jsonError("请先登陆");
+			return this.getLogin();
+		}
+		ModelAndView model = new ModelAndView();
+		model.setViewName("/admin/index");
+		return model;
+	}
+	
+	//-----------------------------------------------------------------------------------------------------------------------
 	
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	public ModelAndView getlu(HttpServletRequest request,HttpServletResponse response,HttpSession session){

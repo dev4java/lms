@@ -33,7 +33,7 @@ public class AdminUsr implements Serializable{
 	private String name;
 	private String password;
 	private Date createTime;
-	private int level;//权限等级
+	private int level;//权限等级 1最大 能做增删改操作 
 	private int status;//状态
 	
 	@Id

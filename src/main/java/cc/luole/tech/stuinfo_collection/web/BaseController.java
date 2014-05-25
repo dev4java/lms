@@ -100,8 +100,9 @@ public class BaseController extends DispatcherServlet{
 		}
 		AdminUsr aUsr = adminUsrService.getAdminUsrbyEmail(name);
 		if(aUsr!=null){
+			
 			String dbPwd=aUsr.getPassword();
-			if(password.equals(dbPwd)){
+			if(password.equals(dbPwd) && aUsr.getLevel()==1){//此处为了简单这样操作
 				session.setAttribute("isLogin", aUsr);
 				session.setMaxInactiveInterval(30*60);//半小时
 				return this.jsonSuccess("suc", "");
@@ -112,6 +113,7 @@ public class BaseController extends DispatcherServlet{
 			return this.jsonError("无此用户,请与管理员联系");
 		}
 	}
+	
 	
 	/**
 	* <p>Title: isLogin</p>
